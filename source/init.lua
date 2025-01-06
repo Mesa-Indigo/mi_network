@@ -1,19 +1,25 @@
 
-Framework = {}
-
+local framework, object
+-- local framework = Data.System
 
 -- system check for framework choice
-local SelectFramework = function()
-    local object
-    local framework = Data.System
-    if framework ~= nil then
-        if framework == 'ox_core' then
-            framework = object
-        elseif framework == 'es_extended' then
-            framework = object
-        elseif framework == 'qb-core' then
-            framework = object
-        else return nil
+local initialization = function(system)
+    local sysinfo
+    if system == 'ox_core' then
+        sysinfo = 'ox_core'
+    elseif system == 'es_extended' then
+        sysinfo = 'es_extended'
+    elseif system == 'qb-core' then
+        sysinfo = 'qb-core'
+    end
+
+    if GetResourceState(system) == 'started' and sysinfo then
+        if sysinfo == 'ox_core' then
+            return
+        elseif sysinfo == 'es_extended' then
+            return
+        elseif sysinfo == 'qb-core' then
+            return
         end
     end
 end
