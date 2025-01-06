@@ -2,6 +2,8 @@
 local framework, object
 -- local framework = Data.System
 
+lib.locale()
+
 -- system check for framework choice
 local initialization = function(system)
     local sysinfo
