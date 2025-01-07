@@ -11,6 +11,9 @@ version '0.0.1' license 'LGPL-3.0-or-later'
 
 -- shared files
 shared_scripts {
+    -- ox
+    '@ox_lib/init.lua',
+    -- mi
     'source/shared/*.lua',
     'data/*.lua',
     'source/init.lua',
@@ -18,11 +21,13 @@ shared_scripts {
 
 -- client files
 client_scripts {
+    -- mi
     'source/client/*.lua'
 }
 
 -- server files
 server_scripts {
+    -- mi
     'source/server/*.lua'
 }
 

@@ -1,13 +1,14 @@
 
--- creation of user identifiers for minet address trace
--- intake character first, last name & dob for generation
-
--- for reference: WM19950827
+----------------
+-- VARIABLES
 local testuser = {
     fname = "Will",
     lname = "Mercer",
     dob = "08/27/1995"
 }
+
+----------------
+-- ID CREATION
 
 local convertDateString = function(date)
     local month, day, year = date:match("(%d%d)/(%d%d)/(%d%d%d%d)")
@@ -33,11 +34,12 @@ GenerateMINetUserID = function(date, first, last)
     if id_date and id_name then
         userid = id_date .. id_name
     end
-    return userid
+    return userid -- test user: WM19950827
 end
 
+----------------
+-- MINET ADDRESS CREATION
 
--- creation of minet address for item / tool metadata
 GenerateMINetAddress = function()
     -- ASCII values for 'A' to 'Z'
     local ASCII, letters = {a = 65, o = 90 }, ""
